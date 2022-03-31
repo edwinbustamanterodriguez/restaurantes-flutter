@@ -1,4 +1,6 @@
 
+import 'package:get_time_ago/get_time_ago.dart';
+
 class Review {
   String slug;
   String restaurant;
@@ -24,6 +26,10 @@ class Review {
     rating: json["rating"],
     created: DateTime.parse(json["created"]),
   );
+
+  String getTimeAgo(){
+    return GetTimeAgo.parse(created);
+  }
 
   Map<String, dynamic> toJson() => {
     "slug": slug,

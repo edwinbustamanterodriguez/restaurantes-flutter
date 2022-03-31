@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_time_ago/get_time_ago.dart';
 import 'package:restaurantes/core/bindings/home_binding.dart';
 import 'package:restaurantes/pages/home/home_page.dart';
 import 'package:restaurantes/routes/app_pages.dart';
@@ -9,6 +10,7 @@ import 'package:restaurantes/translations/app_translation.dart';
 import 'package:restaurantes/utils/themes/light_theme.dart';
 
 Future<void> main()async {
+  GetTimeAgo.setDefaultLocale('es');
   runApp( GetMaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: Routes.HOME,

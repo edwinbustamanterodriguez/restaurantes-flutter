@@ -19,7 +19,10 @@ class HomePage extends GetView<HomeController> {
             (List<Restaurant>? data) => ListView.builder(
               itemCount: data?.length,
               itemBuilder: (context, index) {
-                return CardRestaurant(restaurant: data![index]);
+                return GestureDetector(
+                  onTap: ()=> controller.showDetailRestaurant(data![index]),
+                  child: CardRestaurant(restaurant: data![index]),
+                );
               },
             ),
             onLoading: const Center(child: CircularProgressIndicator()),

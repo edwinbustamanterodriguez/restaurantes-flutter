@@ -33,11 +33,31 @@ TextStyle kRestaurantTitle = TextStyle(
     fontFamily: 'Nexa',
     color: kSecondaryColor);
 
+TextStyle kRestaurantTitleDetail = TextStyle(
+    fontSize: 32,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Nexa',
+    color: kAccentColor);
+
 TextStyle kRestaurantSubtitle = TextStyle(
-  fontSize: 11,
+  fontSize: 14,
   fontWeight: FontWeight.w400,
   fontFamily: 'Poppins',
-  color: kPrimaryColor,
+  color: kShadeColor,
+);
+
+TextStyle kRestaurantSubtitleDetail = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Poppins',
+  color: kWhiteColor,
+);
+
+TextStyle kRestaurantComment = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Nexa',
+  color: kSecondaryColor,
 );
 
 TextStyle kRestaurantTags = TextStyle(
@@ -57,16 +77,16 @@ TextStyle kRestaurantRating = TextStyle(
 
 
 TextStyle kHeaderTitle = TextStyle(
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: FontWeight.w400,
     fontFamily: 'Nexa',
-    color: kTextColor);
+    color: kSecondaryColor);
 
 TextStyle kHeaderSubtitle = TextStyle(
-  fontSize: 12,
+  fontSize: 14,
   fontWeight: FontWeight.w400,
   fontFamily: 'Poppins',
-  color: kTextColor,
+  color: kShadeColor,
 );
 TextStyle kSearchHint = TextStyle(
   fontSize: 12,

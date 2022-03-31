@@ -1,4 +1,12 @@
 import 'package:get/get.dart';
-class DetailController extends GetxController {
+import 'package:restaurantes/core/models/restaurant.dart';
 
+class DetailController extends GetxController {
+  Restaurant restaurant = Get.arguments;
+
+  @override
+  void onInit() {
+    update();
+    super.onInit();
+  }
 }

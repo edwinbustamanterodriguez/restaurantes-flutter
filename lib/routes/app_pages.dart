@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:restaurantes/core/bindings/detail_binding.dart';
-import 'package:restaurantes/pages/detail_page.dart';
+import 'package:restaurantes/pages/home/detail_page.dart';
 import 'package:restaurantes/pages/home/home_page.dart';
 import 'package:restaurantes/routes/app_routes.dart';
 
