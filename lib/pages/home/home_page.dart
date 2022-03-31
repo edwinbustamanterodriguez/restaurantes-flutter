@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:restaurantes/core/controllers/home_controller.dart';
 import 'package:restaurantes/core/models/restaurant.dart';
 import 'package:restaurantes/pages/home/card_restaurant.dart';
+import 'package:restaurantes/utils/themes/colors.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class HomePage extends GetView<HomeController> {
       builder: (controller) => Scaffold(
         appBar: AppBar(title: const Text("RESTAURANTES")),
         body: Container(
+          color: kBackgroundColor,
           child: controller.obx(
             (List<Restaurant>? data) => ListView.builder(
               itemCount: data?.length,

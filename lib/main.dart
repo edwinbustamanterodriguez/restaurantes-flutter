@@ -6,12 +6,15 @@ import 'package:restaurantes/routes/app_pages.dart';
 import 'package:restaurantes/routes/app_routes.dart';
 import 'package:restaurantes/utils/themes/dark_theme.dart';
 import 'package:restaurantes/translations/app_translation.dart';
+import 'package:restaurantes/utils/themes/light_theme.dart';
 
 Future<void> main()async {
   runApp( GetMaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: Routes.HOME,
-    theme: appThemeData,
+    theme: lightTheme,
+    darkTheme: darkTheme,
+    themeMode: ThemeMode.light,
     translations: Messages(),
     locale: Get.deviceLocale,
     fallbackLocale: const Locale('en', 'US'),
