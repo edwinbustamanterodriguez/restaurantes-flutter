@@ -27,6 +27,9 @@ dependencies:
   cached_network_image: ^3.2.0
   get_time_ago: ^1.1.2
   flutter_rating_bar: ^4.0.0
+  multi_select_flutter: ^4.1.2
+  image_picker:
+  dio: ^4.0.6
 
 
   # The following adds the Cupertino Icons font to your application.

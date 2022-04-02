@@ -20,7 +20,7 @@ class HomePage extends GetView<HomeController> {
               itemCount: data?.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  onTap: ()=> controller.showDetailRestaurant(data![index]),
+                  onTap: ()=> controller.showDetailRestaurant(data![index].slug??''),
                   child: CardRestaurant(restaurant: data![index]),
                 );
               },
@@ -33,6 +33,7 @@ class HomePage extends GetView<HomeController> {
                 textAlign: TextAlign.center,
               ),
             ),
+            onEmpty: Text('No Restaurants available'),
           ),
         ),
         floatingActionButton: FloatingActionButton(

@@ -33,7 +33,7 @@ class CardRestaurant extends StatelessWidget {
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15)),
                     child: CachedNetworkImage(
-                      imageUrl: restaurant.logo,
+                      imageUrl: restaurant.logo??'',
                       fit: BoxFit.fitWidth,
                       placeholder: (context, url) =>
                           const Center(child: CircularProgressIndicator()),
@@ -74,7 +74,7 @@ class CardRestaurant extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '${restaurant.reviews.length} Reseñas',
+                      '${restaurant.reviews?.length} Reseñas',
                       style: kRestaurantSubtitle,
                       textAlign: TextAlign.left,
                     ),
