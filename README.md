@@ -1,6 +1,8 @@
 # Restaurants Flutter
 
-![](https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/logo.svg)
+<p align='center'>
+   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/logo.svg" width="300" height="300"/>
+</p>
 
 This is a restaurant project using GetX for Alfredo
 
@@ -20,13 +22,14 @@ This is a restaurant project using GetX for Alfredo
 
 ## Gallery
 <p align='center'>
-    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot1.jpg" width="100" height="300">  />
-   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot2.jpg" width="100" height="300"/>
+    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot1.jpg" width="200" height="300">  />
+   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot2.jpg" width="200" height="300"/>
 </p>
 <p align='center'>
-    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot3.jpg"  width="100" height="300"/>
-   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot4.jpg" width="100" height="300" />
+    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot3.jpg"  width="200" height="300"/>
+   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot4.jpg" width="200" height="300" />
 </p>
+
 ## API
 https://tellurium.behuns.com/swagger/
 ## Installation
