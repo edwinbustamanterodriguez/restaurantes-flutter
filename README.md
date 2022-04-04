@@ -1,6 +1,6 @@
 # Restaurants Flutter
 
-![](https://github.com/edwinbustamanterodriguez/restaurantes-flutter/master/external/logo.svg)
+![](https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/logo.svg)
 
 This is a restaurant project using GetX for Alfredo
 
@@ -20,12 +20,12 @@ This is a restaurant project using GetX for Alfredo
 
 ## Gallery
 <p align='center'>
-    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/master/external/screenshot1.jpg" />
-   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/master/external/screenshot2.jpg" />
+    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/main/external/screenshot1.jpg" />
+   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/master/external/screenshot2.jpg" />
 </p>
 <p align='center'>
-    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/master/external/screenshot3.jpg" />
-   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/master/external/screenshot4.jpg" />
+    <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/master/external/screenshot3.jpg" />
+   <img src="https://github.com/edwinbustamanterodriguez/restaurantes-flutter/blob/master/external/screenshot4.jpg" />
 </p>
 ## API
 https://tellurium.behuns.com/swagger/
