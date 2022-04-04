@@ -2,10 +2,10 @@ import 'package:get/get.dart';
 import 'package:restaurantes/core/bindings/create_restaurant_binding.dart';
 import 'package:restaurantes/core/bindings/detail_binding.dart';
 import 'package:restaurantes/core/bindings/review_binding.dart';
-import 'package:restaurantes/pages/home/create_restaurant_page.dart';
-import 'package:restaurantes/pages/home/detail_page.dart';
-import 'package:restaurantes/pages/home/home_page.dart';
-import 'package:restaurantes/pages/home/review_page.dart';
+import 'package:restaurantes/pages/restaurant/create/create_restaurant_page.dart';
+import 'package:restaurantes/pages/restaurant/home/home_page.dart';
+import 'package:restaurantes/pages/restaurant/detail/detail_page.dart';
+import 'package:restaurantes/pages/restaurant/review/review_page.dart';
 import 'package:restaurantes/routes/app_routes.dart';
 
 class AppPages {

@@ -5,6 +5,6 @@ class HomeBinding implements Bindings{
   @override
   void dependencies() {
     Get.lazyPut(() => RestaurantProvider());
-    Get.lazyPut<HomeController>(() => HomeController(restaurantProvider: Get.find()));
+    Get.lazyPut<HomeController>(() => HomeController(restaurantProvider: Get.find(), ));
   }
 }

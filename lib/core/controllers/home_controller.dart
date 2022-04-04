@@ -1,12 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:restaurantes/core/models/restaurant.dart';
 import 'package:restaurantes/core/providers/restaurant_provider.dart';
 import 'package:restaurantes/routes/app_routes.dart';
 
 class HomeController extends GetxController with StateMixin<List<Restaurant>> {
+  final GlobalKey<ScaffoldState> key = GlobalKey();
   final RestaurantProvider restaurantProvider;
 
-  HomeController({required this.restaurantProvider}){
+  HomeController({required this.restaurantProvider,}){
     fetchRestaurant();
   }
 
@@ -18,6 +20,7 @@ class HomeController extends GetxController with StateMixin<List<Restaurant>> {
       change(null, status: RxStatus.error(err.toString()));
     });
   }
+
   void showDetailRestaurant(String slug) {
     Get.toNamed(Routes.DETAIL,arguments: slug);
   }

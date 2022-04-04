@@ -14,14 +14,8 @@ class ReviewProvider extends GetConnect {
     });
   }
 
-  Future<Response<Review>> saveReview() {
-    var data = {
-      "restaurant": "c6e60295-6e40-47e5-b7ec-2396d8a54de7",
-      "email": "david@example.com",
-      "comments": "medio feo la comida",
-      "rating": "1"
-    };
-    return post<Review>(baseUrlCustom + reviews, data,
+  Future<Response<Review>> saveReview(Review review) {
+    return post<Review>(baseUrlCustom + reviews, review.toJson(),
         decoder: (obj) => Review.fromJson(obj));
   }
 }

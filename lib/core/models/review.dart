@@ -2,20 +2,20 @@
 import 'package:get_time_ago/get_time_ago.dart';
 
 class Review {
-  String slug;
+  String? slug;
   String restaurant;
   String email;
   String comments;
   int rating;
-  DateTime created;
+  DateTime? created;
 
   Review({
-    required this.slug,
+     this.slug,
     required this.restaurant,
     required this.email,
     required this.comments,
     required this.rating,
-    required this.created,
+     this.created,
   });
 
   factory Review.fromJson(Map<String, dynamic> json) => Review(
@@ -28,7 +28,7 @@ class Review {
   );
 
   String getTimeAgo(){
-    return GetTimeAgo.parse(created);
+    return GetTimeAgo.parse(created!);
   }
 
   Map<String, dynamic> toJson() => {
@@ -37,6 +37,5 @@ class Review {
     "email": email,
     "comments": comments,
     "rating": rating,
-    "created": created.toIso8601String(),
   };
 }

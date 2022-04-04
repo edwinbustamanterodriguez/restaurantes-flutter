@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:restaurantes/core/models/restaurant.dart';
 import 'package:restaurantes/utils/themes/colors.dart';
+import 'package:restaurantes/utils/widgets/loading_custom.dart';
 
 class CardRestaurant extends StatelessWidget {
   final Restaurant restaurant;
@@ -12,7 +14,7 @@ class CardRestaurant extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Card(
-      margin: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0,bottom: 16.0),
+      margin: const EdgeInsets.only(top: 16.0,bottom: 16.0),
       elevation: 1.0,
       shadowColor: kPrimaryColor,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15),),),
@@ -36,7 +38,7 @@ class CardRestaurant extends StatelessWidget {
                       imageUrl: restaurant.logo??'',
                       fit: BoxFit.fitWidth,
                       placeholder: (context, url) =>
-                          const Center(child: CircularProgressIndicator()),
+                          const Center(child: LoadingCustom()),
                     ),
                   ),
                 ),
@@ -73,8 +75,7 @@ class CardRestaurant extends StatelessWidget {
                         maxLines: 3,
                       ),
                     ),
-                    Text(
-                      '${restaurant.reviews?.length} Reseñas',
+                    Text( 'comments'.trParams({'number': restaurant.reviews!.length.toString(),},),
                       style: kRestaurantSubtitle,
                       textAlign: TextAlign.left,
                     ),

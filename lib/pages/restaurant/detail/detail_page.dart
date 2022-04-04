@@ -4,9 +4,10 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:restaurantes/core/models/restaurant.dart';
 import 'package:restaurantes/core/models/review.dart';
-import 'package:restaurantes/pages/home/card_comment.dart';
 import 'package:restaurantes/core/controllers/detail_controller.dart';
+import 'package:restaurantes/pages/restaurant/detail/card_comment.dart';
 import 'package:restaurantes/utils/themes/colors.dart';
+import 'package:restaurantes/utils/widgets/loading_custom.dart';
 
 class DetailPage extends GetView<DetailController> {
   const DetailPage({Key? key}) : super(key: key);
@@ -16,7 +17,6 @@ class DetailPage extends GetView<DetailController> {
     final size = MediaQuery.of(context).size;
     return GetBuilder<DetailController>(
       builder: (controller) => Scaffold(
-        appBar: AppBar(title: const Text("Detalle del restaurante")),
         body: controller.obx(
           (Restaurant? restaurant) => SingleChildScrollView(
             child: Column(
@@ -28,8 +28,20 @@ class DetailPage extends GetView<DetailController> {
                       imageUrl: restaurant?.logo ?? '',
                       fit: BoxFit.fitWidth,
                       placeholder: (context, url) =>
-                          const Center(child: CircularProgressIndicator()),
+                          const Center(child: LoadingCustom()),
                     ),
+                    Positioned(
+                        top: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: AppBar(// You can add title here
+                          leading: IconButton(
+                            icon:  Icon(Icons.arrow_back_ios, color: kAccentColor),
+                            onPressed: () => Get.back(),
+                          ),
+                          backgroundColor: Colors.transparent, //You can make this transparent
+                          elevation: 0.0, //No shadow
+                        ),),
                     Positioned(
                       bottom: 0.0,
                       child: Container(
@@ -69,20 +81,28 @@ class DetailPage extends GetView<DetailController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text(
+                        "rate_and_comment".tr,
+                        style: kHeaderTitle,
+                        textAlign: TextAlign.left,
+                      ),
+                      Text(
+                       "rate_description".tr,
+                        style: kRestaurantSubtitle,
+                        textAlign: TextAlign.left,
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
                       GestureDetector(
                         onTap: () {
                           controller.review(restaurant.slug!);
                         },
                         child: Text(
-                          "Califica y comenta",
-                          style: kHeaderTitle,
+                          "write_a_comment".tr,
+                          style: kRestaurantSubtitleAccent,
                           textAlign: TextAlign.left,
                         ),
-                      ),
-                      Text(
-                        "Comparte tu opinion con los demas usuarios",
-                        style: kRestaurantSubtitle,
-                        textAlign: TextAlign.left,
                       ),
                       const SizedBox(
                         height: 48,
@@ -95,7 +115,7 @@ class DetailPage extends GetView<DetailController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Calificaciones y opiniones",
+                                  "ratings_and_opinions".tr,
                                   style: kHeaderTitle,
                                   textAlign: TextAlign.left,
                                 ),
@@ -140,15 +160,14 @@ class DetailPage extends GetView<DetailController> {
               ],
             ),
           ),
-          onLoading: const Center(child: CircularProgressIndicator()),
+          onLoading: const Center(child: LoadingCustom()),
           onError: (error) => Center(
-            child: Text(
-              'Error: $error',
+            child: Text('error'.trParams({'error':error.toString()}),
               style: const TextStyle(fontSize: 18),
               textAlign: TextAlign.center,
             ),
           ),
-          onEmpty: Text('No Restaurant available'),
+          onEmpty: Text('no_restaurants'.tr),
         ),
       ),
     );

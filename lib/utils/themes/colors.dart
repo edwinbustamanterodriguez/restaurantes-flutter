@@ -10,6 +10,7 @@ Color kShadeColor = const Color(0xff969696);
 Color kSoftShadeColor = const Color(0xffc4c4c4);
 Color kBoxColor = const Color(0xffc4c4c4);
 MaterialColor kAppBar  = MaterialColor(0xff121f3d,color);
+MaterialColor kAppBarBack  = MaterialColor(0xff98ca3f,colorAppBack);
 
 Map<int, Color> color =
 {
@@ -25,10 +26,25 @@ Map<int, Color> color =
   900:const Color.fromRGBO(18,31,61, 1),
 };
 
+Map<int, Color> colorAppBack =
+{
+  50:const Color.fromRGBO(152, 202, 63, .1),
+  100:const Color.fromRGBO(152, 202, 63, .2),
+  200:const Color.fromRGBO(152, 202, 63, .3),
+  300:const Color.fromRGBO(152, 202, 63, .4),
+  400:const Color.fromRGBO(152, 202, 63, .5),
+  500:const Color.fromRGBO(152, 202, 63, .6),
+  600:const Color.fromRGBO(152, 202, 63, .7),
+  700:const Color.fromRGBO(152, 202, 63, .8),
+  800:const Color.fromRGBO(152, 202, 63, .9),
+  900:const Color.fromRGBO(152, 202, 63, 1),
+};
+
+
 
 
 TextStyle kRestaurantTitle = TextStyle(
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: FontWeight.w400,
     fontFamily: 'Nexa',
     color: kSecondaryColor);
@@ -44,6 +60,13 @@ TextStyle kRestaurantSubtitle = TextStyle(
   fontWeight: FontWeight.w400,
   fontFamily: 'Poppins',
   color: kShadeColor,
+);
+
+TextStyle kRestaurantSubtitleAccent = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Poppins',
+  color: kAccentColor,
 );
 
 TextStyle kRestaurantSubtitleDetail = TextStyle(
@@ -131,3 +154,9 @@ TextStyle kErrorText = TextStyle(
   fontFamily: 'Nexa',
   color: kPrimaryColor,
 );
+
+TextStyle kButtonText = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Nexa',
+    color: kSecondaryColor);
