@@ -24,11 +24,14 @@ class DetailPage extends GetView<DetailController> {
               children: [
                 Stack(
                   children: [
-                    CachedNetworkImage(
-                      imageUrl: restaurant?.logo ?? '',
-                      fit: BoxFit.fitWidth,
-                      placeholder: (context, url) =>
-                          const Center(child: LoadingCustom()),
+                    SizedBox(
+                      width: size.width,
+                      child: CachedNetworkImage(
+                        imageUrl: restaurant?.logo ?? '',
+                        fit: BoxFit.fitWidth,
+                        placeholder: (context, url) =>
+                            const Center(child: LoadingCustom()),
+                      ),
                     ),
                     Positioned(
                         top: 0.0,
