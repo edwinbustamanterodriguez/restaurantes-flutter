@@ -20,9 +20,7 @@ This is a restaurant project using GetX for Alfredo
 
 ## Demo video
 
-<p align='center'>
-<iframe src="https://drive.google.com/file/d/1GQHsfn1FZBc6OWHgDj4MiAxSp-o44Q34/preview" width="200" height="350"></iframe>
-</p>
+<iframe src="https://drive.google.com/file/d/1GQHsfn1FZBc6OWHgDj4MiAxSp-o44Q34/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Gallery
 <p align='center'>
