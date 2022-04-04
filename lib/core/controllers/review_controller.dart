@@ -38,7 +38,7 @@ class ReviewController extends GetxController {
         rating: rating.toInt(),
       );
       reviewProvider.saveReview(review).then((result) {
-        Get.back();
+        Get.back(result: "updated");
       }, onError: (err) {});
     }
   }

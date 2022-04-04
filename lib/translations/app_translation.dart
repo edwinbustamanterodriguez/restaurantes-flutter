@@ -31,7 +31,8 @@ class Messages extends Translations {
 
       'validation_empty':"Please this field must be filled",
       'validation_email':"The email is not valid",
-      'write_a_comment':"Write a comment"
+      'write_a_comment':"Write a comment",
+      'comment_by':"Comment by: @email",
 
     },
     'es_ES': {
@@ -61,7 +62,8 @@ class Messages extends Translations {
 
       'validation_empty':"Por favor este campo debe ser llenado",
       'validation_email':"El correo no es valido",
-      'write_a_comment':"Escribe un comentario"
+      'write_a_comment':"Escribe un comentario",
+       'comment_by':"Comentado por: @email",
 
     }
   };

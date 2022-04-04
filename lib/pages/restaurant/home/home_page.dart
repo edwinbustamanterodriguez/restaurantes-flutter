@@ -15,69 +15,90 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-      builder: (controller) => Scaffold(
-        key: controller.key,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Text(
-            'app_name'.tr,
-            style: kRestaurantTitle,
-            textAlign: TextAlign.center,
-          ),
-          leading: GestureDetector(
-              onTap: () {
-                controller.key.currentState!.openDrawer();
-              },
-              child: Image.asset('assets/images/avatar.png', scale: 4)),
-        ),
-        drawer: const DrawerCustom(),
-        body: SingleChildScrollView(
-          physics: const ScrollPhysics(),
-          child: Column(
-            children: [
-              const HomeHeader(),
-              const FoodTypes(),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 24, top: 32.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('suggestion'.tr, style: kHeaderTitle),
-                    const SizedBox(height: 14),
-                    controller.obx(
-                      (List<Restaurant>? data) => ListView.builder(
-                        itemCount: data?.length,
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () => controller
-                                .showDetailRestaurant(data![index].slug ?? ''),
-                            child: CardRestaurant(restaurant: data![index]),
-                          );
-                        },
-                      ),
-                      onLoading: const Center(child: LoadingCustom()),
-                      onError: (error) => Center(
-                        child: Text( 'error'.trParams({'error': error.toString(),}),
-                          style: const TextStyle(fontSize: 18),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      onEmpty: Text('no_restaurants'.tr),
-                    ),
-                  ],
-                ),
+      builder: (controller) =>
+          Scaffold(
+            key: controller.key,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              title: Text(
+                'app_name'.tr,
+                style: kRestaurantTitle,
+                textAlign: TextAlign.center,
               ),
-            ],
+              leading: GestureDetector(
+                  onTap: () {
+                    controller.key.currentState!.openDrawer();
+                  },
+                  child: Image.asset('assets/images/avatar.png', scale: 4)),
+              actions: [
+              Align(
+                alignment: Alignment.center,
+                child:  Text(
+                controller.isSwitched?"EN":"ES",
+                style: kRestaurantSubtitleAccent,
+                textAlign: TextAlign.center
+
+              ),),
+            Switch(
+              value: controller.isSwitched,
+              onChanged: (value) {
+                controller.updateTranslation();
+              },
+            ), ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () => controller.createRestaurants(),
+      drawer: const DrawerCustom(),
+      body: SingleChildScrollView(
+        physics: const ScrollPhysics(),
+        child: Column(
+          children: [
+            const HomeHeader(),
+            const FoodTypes(),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 16.0, right: 16.0, bottom: 24, top: 32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('suggestion'.tr, style: kHeaderTitle),
+                  const SizedBox(height: 14),
+                  controller.obx(
+                        (List<Restaurant>? data) =>
+                        ListView.builder(
+                          itemCount: data?.length,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () =>
+                                  controller
+                                      .showDetailRestaurant(
+                                      data![index].slug ?? ''),
+                              child: CardRestaurant(restaurant: data![index]),
+                            );
+                          },
+                        ),
+                    onLoading: const Center(child: LoadingCustom()),
+                    onError: (error) =>
+                        Center(
+                          child: Text('error'.trParams({'error': error
+                              .toString(),}),
+                            style: const TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                    onEmpty: Text('no_restaurants'.tr),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
-    );
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => controller.createRestaurants(),
+      ),
+    ),);
   }
 }

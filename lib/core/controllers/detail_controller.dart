@@ -9,6 +9,7 @@ class DetailController extends GetxController  with StateMixin<Restaurant> {
 
   DetailController({required this.restaurantProvider}){
     getRestaurant(slug);
+
   }
 
 
@@ -22,6 +23,8 @@ class DetailController extends GetxController  with StateMixin<Restaurant> {
   }
 
   void review(String slug) {
-    Get.toNamed(Routes.REVIEW,arguments: slug);
+     Get.toNamed(Routes.REVIEW,arguments: slug);
   }
+
+
 }

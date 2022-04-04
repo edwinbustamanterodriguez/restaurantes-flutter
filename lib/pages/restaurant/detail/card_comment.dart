@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:restaurantes/core/models/review.dart';
 import 'package:restaurantes/utils/themes/colors.dart';
 
@@ -46,7 +47,7 @@ class CardComment extends StatelessWidget {
             ),
           ),
           Text(
-            'Comentado por: ${review.email}',
+            'comment_by'.trParams({'email':review.email}),
             style: kRestaurantComment,
           ),
         ],
