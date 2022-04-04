@@ -8,7 +8,7 @@ This is a restaurant project using GetX for Alfredo
 
 ## Getting Started
 
-####Application functions
+### Application functions
 
 * List Restaurants
     - Ready
@@ -21,9 +21,7 @@ This is a restaurant project using GetX for Alfredo
 ## Demo video
 
 <p align='center'>
- <video width="320" height="240" autoplay>
-  <source src="https://drive.google.com/file/d/1GQHsfn1FZBc6OWHgDj4MiAxSp-o44Q34/view?usp=sharing" type="video/mp4">
- </video>
+<iframe src="https://drive.google.com/file/d/1GQHsfn1FZBc6OWHgDj4MiAxSp-o44Q34/preview" width="200" height="350"></iframe>
 </p>
 
 ## Gallery
