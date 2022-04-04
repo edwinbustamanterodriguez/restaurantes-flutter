@@ -144,7 +144,7 @@ class DetailPage extends GetView<DetailController> {
                                 )),
                             child: Center(
                                 child: Text(
-                              '${restaurant.rating}',
+                              '${restaurant.rating?.toStringAsFixed(1)}',
                               style: kRestaurantRating,
                               textAlign: TextAlign.center,
                             )),

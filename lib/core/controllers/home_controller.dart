@@ -11,10 +11,10 @@ class HomeController extends GetxController with StateMixin<List<Restaurant>> {
   bool isSwitched = false;
 
   HomeController({required this.restaurantProvider,}){
-    fetchRestaurant();
+    fetchRestaurants();
   }
 
-  Future<void> fetchRestaurant() async {
+  Future<void> fetchRestaurants() async {
     restaurantProvider.getRestaurants().then((result) {
       List<Restaurant>? data = result.body;
       change(data, status: RxStatus.success());
@@ -27,8 +27,11 @@ class HomeController extends GetxController with StateMixin<List<Restaurant>> {
     Get.toNamed(Routes.DETAIL,arguments: slug);
   }
 
-  void createRestaurants() {
-    Get.toNamed(Routes.CREATE_RESTAURANT);
+  void createRestaurants()async {
+    var data  = await  Get.toNamed(Routes.CREATE_RESTAURANT);
+    if(data == 'success'){
+      fetchRestaurants();
+    }
   }
 
   void updateTranslation(){

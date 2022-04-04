@@ -51,7 +51,7 @@ class CardRestaurant extends StatelessWidget {
                         color: kAccentColor,
                         borderRadius: const BorderRadius.all(Radius.circular(4.0),)
                     ),
-                    child:  Center(child: Text('${restaurant.rating}',  style: kRestaurantRating,textAlign: TextAlign.center,)),),
+                    child:  Center(child: Text('${restaurant.rating?.toStringAsFixed(1)}',  style: kRestaurantRating,textAlign: TextAlign.center,)),),
                 ),
               ],
             ),
@@ -72,7 +72,7 @@ class CardRestaurant extends StatelessWidget {
                         restaurant.description,
                         style: kRestaurantSubtitle,
                         textAlign: TextAlign.left,
-                        maxLines: 3,
+                        maxLines: 2,
                       ),
                     ),
                     Text( 'comments'.trParams({'number': restaurant.reviews!.length.toString(),},),

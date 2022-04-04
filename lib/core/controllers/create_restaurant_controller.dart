@@ -57,7 +57,7 @@ class CreateRestaurantController extends GetxController
           image: image.value);
 
       restaurantProvider.saveRestaurant(restaurant).then((result) {
-        Get.back();
+        Get.back(result: "success");
       }, onError: (err) {});
     }
   }

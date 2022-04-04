@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:restaurantes/core/models/restaurant.dart';
 import 'package:restaurantes/core/providers/restaurant_provider.dart';
+import 'package:restaurantes/pages/restaurant/review/review_page.dart';
 import 'package:restaurantes/routes/app_routes.dart';
 
 class DetailController extends GetxController  with StateMixin<Restaurant> {
@@ -9,7 +10,6 @@ class DetailController extends GetxController  with StateMixin<Restaurant> {
 
   DetailController({required this.restaurantProvider}){
     getRestaurant(slug);
-
   }
 
 
@@ -22,9 +22,10 @@ class DetailController extends GetxController  with StateMixin<Restaurant> {
     });
   }
 
-  void review(String slug) {
-     Get.toNamed(Routes.REVIEW,arguments: slug);
+  void review(String slug)async {
+    var data  = await Get.toNamed(Routes.REVIEW,arguments: slug);
+    if(data == 'success'){
+      getRestaurant(slug);
+    }
   }
-
-
 }
